@@ -8,19 +8,23 @@ what NPM do i need to do this?
         b.favorite color
     2.util- to handle promises
     3.git hub api documentation
-after questions what needs to be generated?
-    1. Profile Image
-    2. User name
+    4.axios?
+    5.google maps api?
+    6.seperate api for stars in GIthub
+
+after questions what needs to be generated? (pathway)
+    1. Profile Image (response.avatar_url)
+    2. User name (response.name)
     3. links to
-        a. Google maps
-        b. github profile
-        c. user blog
-    4. bio
+        a. Google maps (response.location)
+        b. github profile (response.html_url)
+        c. user blog (response.blog)
+    4. bio (response.bio)
     5. number of
-        a. public repos
-        b. followers
-        c. github stars
-        d. users following
+        a. public repos (response.public_repos)
+        b. followers (response.followers)
+        c. github stars (https://developer.github.com/changes/2012-09-05-watcher-api/)
+        d. users following (response.following)
 General Qs
 =============================
 What would be the best way to handle the promises?
@@ -30,6 +34,10 @@ How do i make a pdf from node?
 
 how do i connect the generateHTML.js?
 
+Mile stone
+inquirer to work (x)
+axios to work (x)
+map res
 
 
 
