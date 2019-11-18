@@ -44,9 +44,13 @@ HTML design
     b. what the text will be(x 11/16)
 Map API
 Link map to HTML
-ES7 reworking (x 11/16)
+ES7 reworking
 Use Async Wait functioning (x 11/16) 
 Constructor for github stuff? refer to 10/02 activity
+
+Styling
+Use color settings
+
 
 
 

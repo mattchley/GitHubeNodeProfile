@@ -37,7 +37,7 @@ function promptUser() {
           const userFollowers = res.data.followers;
           const userStars = 0;
           const userFollowing = res.data.following;
-        
+
           return `
           <!DOCTYPE html>
         <html lang="en">
@@ -101,7 +101,7 @@ function promptUser() {
 async function init() {
   console.log("hi")
   try {
-    const res = await promptUser();
+    await promptUser();
 
   } catch (err) {
     console.log(err);
