@@ -40,8 +40,8 @@ Mile stones
 inquirer to work (x 11/14)
 axios to work (x 11/14)
 HTML design
-    a. format
-    b. what the text will be
+    a. format (x 11/16)
+    b. what the text will be(x 11/16)
 Map API
 Link map to HTML
 ES7 reworking (x 11/16)
