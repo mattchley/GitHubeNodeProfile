@@ -54,6 +54,7 @@ Use color settings
 Update 11/19
 really working on the Async in index2
     now retruns at proper time and gets info for both github user and stars
+    gitHUb and stars console.log res.data
 
 
 

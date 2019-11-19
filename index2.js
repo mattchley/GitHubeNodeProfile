@@ -27,29 +27,39 @@ function axiosGithub({ username }) {
     return axios
         .get(`https://api.github.com/users/${username}`)
         .then(function (res) {
-            console.log(res.data.name);
+            return res.data;
+            const userImg = res.data.avatar_url;
+            const userName = res.data.name;
+            const userLocal = res.data.location;
+            const userGitHub = res.data.html_url;
+            const userBlog = res.data.blog;
+            const userBio = res.data.bio;
+            const userRepos = res.data.public_repos;
+            const userFollowers = res.data.followers;
+            const userFollowing = res.data.following;
         })
 };
 
-function axiosStars({username}) {
+function axiosStars({ username }) {
     return axios
         .get(`https://api.github.com/users/${username}/watched`)
         .then(function (res) {
-            console.log(res.data);
+            return res.data
+            const userStars = res.data;
         })
 };
 
-// function generateHTML(userImg, userName, userLocal, userGitHub, userBio, userBlog, userRepos, userFollowers, userFollowing) {
-    // const userImg = res.data.avatar_url;
-        //   const userName = res.data.name;
-        //   const userLocal = res.data.location;
-        //   const userGitHub = res.data.html_url;
-        //   const userBlog = res.data.blog;
-        //   const userBio = res.data.bio;
-        //   const userRepos = res.data.public_repos;
-        //   const userFollowers = res.data.followers;
-        //   const userStars = 0;
-        //   const userFollowing = res.data.following;
+// function generateHTML({res}) {
+
+//     const userImg = res.data.avatar_url;
+//     const userName = res.data.name;
+//     const userLocal = res.data.location;
+//     const userGitHub = res.data.html_url;
+//     const userBlog = res.data.blog;
+//     const userBio = res.data.bio;
+//     const userRepos = res.data.public_repos;
+//     const userFollowers = res.data.followers;
+//     const userFollowing = res.data.following;
 //     return `
 //     <!DOCTYPE html>
 //   <html lang="en">
@@ -105,10 +115,12 @@ function axiosStars({username}) {
 async function init() {
     try {
         const answers = await promptUser();
-        const github = await axiosGithub(answers);
+        const gitHub = await axiosGithub(answers);
         const stars = await axiosStars(answers);
-        // const html = generateHTML(github, stars)
-        // await writeFileAsync("index.html", html);
+        console.log (gitHub)
+        console.log (stars)
+        // const html = generateHTML(gitHub, stars)
+        // await writeFileAsync("index2.html", html);
 
     } catch (err) {
         console.log(err);
