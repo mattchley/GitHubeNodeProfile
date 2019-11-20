@@ -132,7 +132,7 @@ function generateHTML(gitHub, stars, { color }) {
 };
 
 function renderPdf(convert, options) {
-  pdf.create(convert, options).toFile('./index2.pdf', function (err, res) {
+  pdf.create(convert, options).toFile('./index3.pdf', function (err, res) {
     if (err) return console.log(err);
     console.log(res); // { filename: 'index2.pdf' }
   });
@@ -147,7 +147,7 @@ async function init() {
     const html = generateHTML(gitHub, stars, answers)
     await writeFileAsync("index3.html", html);
     const convert = fs.readFileSync('./index3.html', 'utf8');
-    const options = { format: 'Letter' };
+    const options = { height: "20in", width: "20in", };
      await renderPdf(convert, options)
     console.log("index3.html successfully created! and converted")
 
