@@ -5,6 +5,11 @@ const fs = require("fs");
 const util = require("util");
 
 const writeFileAsync = util.promisify(fs.writeFile);
+// PDF Converter
+const pdf = require('html-pdf');
+
+
+
 
 // functions
 function promptUser() {
@@ -126,6 +131,13 @@ function generateHTML(gitHub, stars, { color }) {
   </html>`
 };
 
+function renderPdf(convert, options) {
+  pdf.create(convert, options).toFile('./index2.pdf', function (err, res) {
+    if (err) return console.log(err);
+    console.log(res); // { filename: 'index2.pdf' }
+  });
+}
+
 
 async function init() {
   try {
@@ -133,8 +145,11 @@ async function init() {
     const gitHub = await axiosGithub(answers);
     const stars = await axiosStars(answers);
     const html = generateHTML(gitHub, stars, answers)
-    await writeFileAsync("index2.html", html);
-    console.log("index2.html successfully created!")
+    await writeFileAsync("index3.html", html);
+    const convert = fs.readFileSync('./index3.html', 'utf8');
+    const options = { format: 'Letter' };
+     await renderPdf(convert, options)
+    console.log("index3.html successfully created! and converted")
 
   } catch (err) {
     console.log(err);
